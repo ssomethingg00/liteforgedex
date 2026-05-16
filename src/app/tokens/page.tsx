@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { useReadContract, useReadContracts } from "wagmi";
 import { swapAbi, erc20Abi } from "@/lib/abi";
 import { CONTRACT_ADDRESS } from "@/lib/chain";
-import { GhostBtn, Stat, TokenGlyph } from "@/components/lf";
+import { Stat, TokenGlyph } from "@/components/lf";
 import { shortAddr } from "@/lib/format";
 import { ICON_LIBRARY } from "@/lib/tokenIcons";
 
@@ -26,18 +26,9 @@ function formatSupply(supply: bigint, decimals: number | undefined): string {
   return fracStr ? `${wholeStr}.${fracStr}` : wholeStr;
 }
 
-type Filter = "all" | "registered" | "unregistered";
-
 export default function TokensPage() {
-  const [filter, setFilter] = useState<Filter>("all");
   const [q, setQ] = useState("");
   const [copied, setCopied] = useState<string | null>(null);
-
-  const { data: deployed } = useReadContract({
-    address: CONTRACT_ADDRESS,
-    abi: swapAbi,
-    functionName: "check_all_deploy_tokens",
-  });
 
   const { data: registered } = useReadContract({
     address: CONTRACT_ADDRESS,
@@ -51,16 +42,7 @@ export default function TokensPage() {
     functionName: "testEthAddress",
   });
 
-  const tokenList = (deployed as `0x${string}`[] | undefined) ?? [];
-  const registeredSet = useMemo(
-    () =>
-      new Set(
-        ((registered as `0x${string}`[] | undefined) ?? []).map((a) =>
-          a.toLowerCase()
-        )
-      ),
-    [registered]
-  );
+  const tokenList = (registered as `0x${string}`[] | undefined) ?? [];
 
   const metaContracts = useMemo(
     () =>
@@ -89,7 +71,6 @@ export default function TokensPage() {
       symbol: symbol ?? "?",
       decimals,
       supply,
-      registered: registeredSet.has(addr.toLowerCase()),
       isTestEth:
         !!testEthAddr &&
         (testEthAddr as string).toLowerCase() === addr.toLowerCase(),
@@ -97,9 +78,6 @@ export default function TokensPage() {
   });
 
   const list = enriched
-    .filter((t) =>
-      filter === "all" ? true : filter === "registered" ? t.registered : !t.registered
-    )
     .filter((t) => {
       if (!q) return true;
       const lc = q.toLowerCase();
@@ -123,23 +101,12 @@ export default function TokensPage() {
           <span className="text-ember">▲</span> TOKENS
         </h1>
         <span className="font-mono text-[10px] tracking-[0.2em] text-dim">
-          {tokenList.length} DEPLOYED · {registeredSet.size} REGISTERED
+          {tokenList.length} REGISTERED
         </span>
       </div>
 
-      {/* Filter + search */}
+      {/* Search */}
       <div className="flex flex-wrap items-center gap-3">
-        <div className="flex gap-1">
-          {(["all", "registered", "unregistered"] as Filter[]).map((id) => (
-            <GhostBtn
-              key={id}
-              onClick={() => setFilter(id)}
-              active={filter === id}
-            >
-              {id.toUpperCase()}
-            </GhostBtn>
-          ))}
-        </div>
         <input
           className="lf-input flex-1 min-w-[220px] max-w-md"
           placeholder="search by symbol / name / 0x…"
@@ -168,15 +135,6 @@ export default function TokensPage() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className="font-mono font-bold text-ink">{t.symbol}</span>
-                  {t.registered ? (
-                    <span className="font-mono text-[9px] tracking-wider text-ember border border-ember/40 px-1.5 py-0.5">
-                      REGISTERED
-                    </span>
-                  ) : (
-                    <span className="font-mono text-[9px] tracking-wider text-dim border border-line2 px-1.5 py-0.5">
-                      UNREGISTERED
-                    </span>
-                  )}
                   {t.isTestEth && (
                     <span className="font-mono text-[9px] tracking-wider text-spark border border-spark/40 px-1.5 py-0.5">
                       GAS · zkLTC

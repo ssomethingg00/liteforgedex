@@ -58,18 +58,11 @@ export default function HomePage() {
     abi: swapAbi,
     functionName: "getRegisteredTokens",
   });
-  const { data: deployed } = useReadContract({
-    address: CONTRACT_ADDRESS,
-    abi: swapAbi,
-    functionName: "check_all_deploy_tokens",
-  });
   const regCount = (registered as `0x${string}`[] | undefined)?.length ?? 0;
-  const depCount = (deployed as `0x${string}`[] | undefined)?.length ?? 0;
 
   const stats = [
     { label: "TVL", value: "4,182,907", unit: "zkLTC" },
-    { label: "REGISTERED", value: regCount.toString(), unit: "" },
-    { label: "DEPLOYED", value: depCount.toString(), unit: "" },
+    { label: "TOKENS", value: regCount.toString(), unit: "" },
     { label: "BLOCK TIME", value: "0.4", unit: "s" },
   ];
 

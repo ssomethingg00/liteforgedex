@@ -158,7 +158,7 @@ export default function AboutPage() {
           {[
             { label: "Documentation", href: "https://docs.litvm.com/", external: true, soon: false },
             { label: "Explorer", href: "https://liteforge.explorer.caldera.xyz", external: true, soon: false },
-            { label: "GitHub — Source", href: "https://github.com/gameinstall2025/liteforgedex", external: true, soon: false },
+            { label: "GitHub — Source", href: "https://github.com/somethingg00/liteforgedex", external: true, soon: false },
             { label: "X / Twitter — @LitecoinVM", href: "https://twitter.com/LitecoinVM", external: true, soon: false },
             { label: "Developer — @ssomethingg00", href: "https://x.com/ssomethingg00", external: true, soon: false },
             { label: "Email — gameinstall2025@gmail.com", href: "mailto:gameinstall2025@gmail.com", external: false, soon: false },

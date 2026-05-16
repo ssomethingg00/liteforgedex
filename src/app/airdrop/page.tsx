@@ -36,10 +36,29 @@ export default function AirdropPage() {
     pool: string;
   }>({ wallets: "—", pool: "—" });
 
-  // Pre-fill the connected wallet address
+  // Epoch clock: starts 2026-04-18, each epoch = 29 days, total count not finalized
+  const [epoch, setEpoch] = useState<{ num: string; text: string }>({
+    num: "—",
+    text: "—",
+  });
   useEffect(() => {
-    if (isConnected && address) setAddr(address);
-  }, [isConnected, address]);
+    const start = Date.UTC(2026, 3, 18); // April 18, 2026 (UTC)
+    const days = Math.floor((Date.now() - start) / 86_400_000);
+    if (days < 0) return;
+    const num = Math.floor(days / 29) + 1;
+    const dayInEpoch = days % 29;
+    const daysLeft = 29 - dayInEpoch;
+    const numStr = String(num).padStart(2, "0");
+    setEpoch({
+      num: numStr,
+      text: `EPOCH ${numStr} · ${daysLeft} DAY${daysLeft === 1 ? "" : "S"} LEFT`,
+    });
+  }, []);
+
+  // Pre-fill disabled while airdrop is frozen — no addresses shown
+  // useEffect(() => {
+  //   if (isConnected && address) setAddr(address);
+  // }, [isConnected, address]);
 
   // Load aggregate stats
   useEffect(() => {
@@ -90,6 +109,8 @@ export default function AirdropPage() {
     }
   };
 
+  const FROZEN = true;
+
   return (
     <div className="page-enter pt-10 max-w-3xl mx-auto space-y-6">
       <div className="flex items-baseline justify-between flex-wrap gap-2">
@@ -97,21 +118,42 @@ export default function AirdropPage() {
           <span className="text-ember">▲</span> AIRDROP · THE ANVIL
         </h1>
         <span className="font-mono text-[10px] tracking-[0.2em] text-dim">
-          EPOCH 04 · 12 DAYS LEFT
+          {FROZEN ? "—" : epoch.text}
         </span>
       </div>
+
+      {FROZEN && (
+        <Panel>
+          <div className="px-5 py-4 border-l-2 border-warn">
+            <div className="font-mono text-[10px] tracking-[0.25em] text-warn mb-1">
+              ▸ AIRDROP FROZEN
+            </div>
+            <div className="font-mono text-[12px] text-dim2 leading-relaxed">
+              Eligibility checks are temporarily disabled while snapshot data is
+              being finalized. Check back next epoch — no action required.
+            </div>
+          </div>
+        </Panel>
+      )}
 
       {/* Stats strip */}
       <Panel>
         <div className="grid grid-cols-3 divide-x divide-line">
           <div className="px-5 py-4">
-            <Stat label="ALLOCATION POOL" value={stats.pool} unit="LITVM" />
+            <Stat
+              label="ALLOCATION POOL"
+              value={FROZEN ? "—" : stats.pool}
+              unit={FROZEN ? undefined : "LITVM"}
+            />
           </div>
           <div className="px-5 py-4">
-            <Stat label="ELIGIBLE WALLETS" value={stats.wallets} />
+            <Stat
+              label="ELIGIBLE WALLETS"
+              value={FROZEN ? "—" : stats.wallets}
+            />
           </div>
           <div className="px-5 py-4">
-            <Stat label="EPOCH" value="04" accent />
+            <Stat label="EPOCH" value={FROZEN ? "—" : epoch.num} accent={!FROZEN} />
           </div>
         </div>
       </Panel>
@@ -119,9 +161,15 @@ export default function AirdropPage() {
       {/* The Anvil */}
       <Panel
         title="▸ CHECK ELIGIBILITY"
-        glow={!!result?.eligible}
+        glow={!FROZEN && !!result?.eligible}
       >
-        <div className="p-6 space-y-4">
+        <div
+          className={cls(
+            "p-6 space-y-4",
+            FROZEN && "opacity-50 pointer-events-none select-none"
+          )}
+          aria-disabled={FROZEN}
+        >
           <div>
             <label className="font-mono text-[10px] tracking-[0.2em] text-dim block mb-2">
               ▸ WALLET ADDRESS
@@ -136,17 +184,19 @@ export default function AirdropPage() {
                 }}
                 placeholder="0x…"
                 className="lf-input flex-1"
+                disabled={FROZEN}
+                readOnly={FROZEN}
               />
               <PrimaryBtn
                 loading={checking}
                 onClick={check}
                 className="!w-auto !px-6"
-                disabled={!addr || addr.length !== 42}
+                disabled={FROZEN || !addr || addr.length !== 42}
               >
                 CHECK
               </PrimaryBtn>
             </div>
-            {address && (
+            {address && !FROZEN && (
               <div className="font-mono text-[10px] text-dim mt-2">
                 ▸ try{" "}
                 <button
@@ -240,10 +290,10 @@ export default function AirdropPage() {
                     {t.name.toUpperCase()}
                   </div>
                   <div className="font-mono text-[10px] text-dim mt-1">
-                    {t.req}
+                    {FROZEN ? "—" : t.req}
                   </div>
                   <div className="font-mono text-[10px] text-dim2 num mt-0.5">
-                    {t.amt} LITVM
+                    {FROZEN ? "—" : `${t.amt} LITVM`}
                   </div>
                 </div>
               ))}

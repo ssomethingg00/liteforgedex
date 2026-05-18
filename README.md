@@ -56,4 +56,4 @@ Issues and PRs are welcome. For anything bigger than a typo fix, open an issue f
 
 ## Contact
 
-gameinstall2025@gmail.com · [@ssomethingg00](https://x.com/ssomethingg00)
+x [@ssomethingg00](https://x.com/ssomethingg00)

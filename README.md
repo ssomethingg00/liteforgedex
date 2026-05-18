@@ -44,11 +44,6 @@ NEXT_PUBLIC_CHAIN_ID=4441
 NEXT_PUBLIC_RPC_URL=https://liteforge.rpc.caldera.xyz/http
 ```
 
-Other useful scripts:
-
-- `yarn build` — production build
-- `yarn pages:preview` — Cloudflare Pages local preview
-- `yarn pages:deploy` — deploy to Cloudflare
 
 ## Contributing
 

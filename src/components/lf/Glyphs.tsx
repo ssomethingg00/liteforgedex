@@ -17,15 +17,22 @@ export function ForgeMark({
       style={glow ? { filter: "drop-shadow(0 0 6px #9FFF3C)" } : undefined}
     >
       <path
-        d="M3 8 L12 3 L21 8 L21 16 L12 21 L3 16 Z"
+        d="M8.25 5.25 L8.25 17.25 L15 17.25"
         stroke="#9FFF3C"
-        strokeWidth="1.5"
+        strokeWidth="2"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
       />
       <path
-        d="M8 11 L16 11 M12 8 L12 16"
+        d="M5.25 10.5 L12 9"
         stroke="#9FFF3C"
-        strokeWidth="1.5"
+        strokeWidth="2"
+        strokeLinecap="square"
       />
+      <g transform="rotate(45 18 6)">
+        <rect x="15.75" y="4.875" width="5.25" height="2.25" fill="#3DD9FF" />
+        <rect x="18" y="7.125" width="0.75" height="5.25" fill="#D4E4DA" />
+      </g>
     </svg>
   );
 }

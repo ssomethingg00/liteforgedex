@@ -58,7 +58,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://github.com/somethingg00/liteforgedex"
+                href="https://github.com/ssomethingg00/liteforgedex"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub — Source code & bug bounty"

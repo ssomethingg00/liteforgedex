@@ -232,7 +232,7 @@ export default function AboutPage() {
             { label: "GitHub — Source", href: "https://github.com/ssomethingg00/liteforgedex", external: true, soon: false },
             { label: "X / Twitter — @LitecoinVM", href: "https://twitter.com/LitecoinVM", external: true, soon: false },
             { label: "Developer — @ssomethingg00", href: "https://x.com/ssomethingg00", external: true, soon: false },
-            { label: "Telegram (Soon)", href: "#", external: false, soon: true },
+            { label: "Telegram — LiteForge DEX", href: "https://t.me/liteforgedex", external: true, soon: false },
           ].map((link) =>
             link.soon ? (
               <span

@@ -56,4 +56,5 @@ Issues and PRs are welcome. For anything bigger than a typo fix, open an issue f
 
 ## Contact
 
-x [@ssomethingg00](https://x.com/ssomethingg00)
+- Telegram — [t.me/liteforgedex](https://t.me/liteforgedex)
+- x [@ssomethingg00](https://x.com/ssomethingg00)

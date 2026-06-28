@@ -69,15 +69,18 @@ export function Footer() {
                   <path d="M12 .5C5.73.5.67 5.56.67 11.83c0 5.02 3.25 9.27 7.76 10.77.57.1.78-.25.78-.55v-1.94c-3.16.69-3.82-1.52-3.82-1.52-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.52-.29-5.17-1.26-5.17-5.6 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.44.11-3 0 0 .96-.31 3.15 1.17a10.97 10.97 0 0 1 5.74 0c2.19-1.48 3.14-1.17 3.14-1.17.63 1.56.24 2.71.12 3 .73.79 1.17 1.8 1.17 3.04 0 4.35-2.66 5.31-5.19 5.59.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55 4.51-1.5 7.75-5.76 7.75-10.77C23.33 5.56 18.27.5 12 .5Z" />
                 </svg>
               </a>
-              <span
-                aria-label="Telegram — coming soon"
-                title="Telegram — Coming Soon"
-                className="w-9 h-9 rounded-full border border-line2/60 flex items-center justify-center text-dim/40 bg-panel2/30 cursor-not-allowed relative"
+              <a
+                href="https://t.me/liteforgedex"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram — LiteForge DEX"
+                title="Telegram — LiteForge DEX"
+                className="w-9 h-9 rounded-full border border-line2 flex items-center justify-center text-dim hover:text-ink hover:border-ember/50 bg-panel2/40 transition-colors"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
                 </svg>
-              </span>
+              </a>
             </div>
           </div>
 
@@ -160,13 +163,18 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <span className="font-mono text-[13px] text-dim/40 cursor-not-allowed inline-flex items-center gap-1.5">
+                <a
+                  href="https://t.me/liteforgedex"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-[13px] text-dim hover:text-ember transition-colors inline-flex items-center gap-1.5"
+                >
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="shrink-0">
                     <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
                   </svg>
-                  Telegram{" "}
-                  <span className="text-[11px]">(Soon)</span>
-                </span>
+                  Telegram
+                  <span className="text-[10px]">↗</span>
+                </a>
               </li>
               <li>
                 <a

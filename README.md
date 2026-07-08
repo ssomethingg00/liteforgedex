@@ -19,7 +19,7 @@ This repo is the frontend.
   <img width="766" height="700" alt="image" src="https://github.com/user-attachments/assets/3314d28f-4a21-43c7-a6ad-71aee86848d3" />
 
 - **Stake** — lock LITVM and earn a proportional share of sequencer fee revenue, paid in zkLTC
-- <img width="1113" height="751" alt="image" src="https://github.com/user-attachments/assets/a1aeb27d-dfb3-4b9b-8f6b-3e78d6b0a36e" />
+  <img width="1113" height="751" alt="image" src="https://github.com/user-attachments/assets/a1aeb27d-dfb3-4b9b-8f6b-3e78d6b0a36e" />
 
 - **Forge** — deploy capped, burnable, pausable ERC20s in a single tx, instantly listable
 - **Airdrop** — snapshot-based distribution with on-chain eligibility, tiered into Forgemaster / Ember / Spark
@@ -27,7 +27,7 @@ This repo is the frontend.
 
 - **Activity** — full per-wallet history (swaps, bridges, stakes) with real-time volume
 
-<img width="965" height="776" alt="image" src="https://github.com/user-attachments/assets/c9711287-5f80-4537-ae0e-6eac0e169e33" />
+  <img width="965" height="776" alt="image" src="https://github.com/user-attachments/assets/c9711287-5f80-4537-ae0e-6eac0e169e33" />
 
 
 ## Network

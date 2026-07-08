@@ -13,12 +13,22 @@ This repo is the frontend.
 ## What's inside
 
 - **Swap** — trade any registered ERC20 against zkLTC, sub-second settlement, oracle-backed pricing
+  <img width="764" height="548" alt="image" src="https://github.com/user-attachments/assets/f2f3fb06-3042-4745-810a-39d79a28e470" />
+
 - **Bridge** — move real Litecoin into zkLTC trustlessly via BitcoinOS Grail (no wrapped custodians, no multisig)
+  <img width="766" height="700" alt="image" src="https://github.com/user-attachments/assets/3314d28f-4a21-43c7-a6ad-71aee86848d3" />
+
 - **Stake** — lock LITVM and earn a proportional share of sequencer fee revenue, paid in zkLTC
+- <img width="1113" height="751" alt="image" src="https://github.com/user-attachments/assets/a1aeb27d-dfb3-4b9b-8f6b-3e78d6b0a36e" />
+
 - **Forge** — deploy capped, burnable, pausable ERC20s in a single tx, instantly listable
 - **Airdrop** — snapshot-based distribution with on-chain eligibility, tiered into Forgemaster / Ember / Spark
+  <img width="843" height="631" alt="image" src="https://github.com/user-attachments/assets/0cec25d2-a95e-4d9c-9d21-0e869d82d34d" />
+
 - **Activity** — full per-wallet history (swaps, bridges, stakes) with real-time volume
 <img width="1060" height="397" alt="image" src="https://github.com/user-attachments/assets/6b6a1d83-82c9-4f9c-b614-65b404154825" />
+<img width="965" height="776" alt="image" src="https://github.com/user-attachments/assets/c9711287-5f80-4537-ae0e-6eac0e169e33" />
+
 
 ## Network
 

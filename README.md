@@ -26,7 +26,7 @@ This repo is the frontend.
   <img width="843" height="631" alt="image" src="https://github.com/user-attachments/assets/0cec25d2-a95e-4d9c-9d21-0e869d82d34d" />
 
 - **Activity** — full per-wallet history (swaps, bridges, stakes) with real-time volume
-<img width="1060" height="397" alt="image" src="https://github.com/user-attachments/assets/6b6a1d83-82c9-4f9c-b614-65b404154825" />
+
 <img width="965" height="776" alt="image" src="https://github.com/user-attachments/assets/c9711287-5f80-4537-ae0e-6eac0e169e33" />
 
 

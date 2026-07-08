@@ -40,7 +40,8 @@ This repo is the frontend.
 | Gas token | zkLTC — 1:1 with LTC, 18 decimals |
 | Block time | ~0.4s |
 | Explorer | https://liteforge.explorer.caldera.xyz |
-<img width="1117" height="452" alt="image" src="https://github.com/user-attachments/assets/29d2b5b9-7abf-4692-83e4-4709c4bb06cb" />
+ <img width="1126" height="478" alt="image" src="https://github.com/user-attachments/assets/6b37565f-4a83-4492-925c-a9f7af05460a" />
+
 
 ## Tech
 

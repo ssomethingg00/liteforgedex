@@ -7,7 +7,7 @@ Live site: **https://liteforgedex.com**
 LiteForge is the native DEX of **LitVM LiteForge** — an EVM rollup that pulls its security from Litecoin's proof-of-work. You can swap tokens, bridge real LTC in via the Grail bridge, stake LITVM for a cut of sequencer fees, and even spin up your own ERC20 in one transaction.
 
 This repo is the frontend.
-<img width="837" height="437" alt="image" src="https://github.com/user-attachments/assets/7cbadfaf-a443-42e5-9a69-5e8f26293fc8" />
+
 
 
 ## What's inside
